@@ -1,668 +1,755 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CATALOGO V2</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible"content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->  
+<!-- =========================================
+   Propiedad de LuzNet ©
+   Creado por Felipe Jiménez
+   Así de fácil, así de impresionante, así es LuzNet
+   ========================================= -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CATALOGO DIGITAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Mukta:wght@800&display=swap" rel="stylesheet">
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <!-- Importar Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Dancing+Script&family=Raleway&family=Oswald&family=Playfair+Display&family=Indie+Flower&display=swap" rel="stylesheet">
 
-
-
-
-   
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+/*
+    .padre {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }*/
     
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-
-
-<style>
-/*ESTILO DE FONDO ANIMADO*/
-:root {
-  --gradient: linear-gradient(-45deg,white, purple,black,purple,white );
+    .padre {
+  font-family: 'Shadows Into Light', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra verticalmente */
+  align-items: center;       /* centra horizontalmente */
+  width: 100%;
+  min-height: 100vh;         /* ocupa toda la pantalla */
+  overflow-x: hidden;
 }
 
-
-/*cuerpo*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Baloo 2';
-}
-
-body {
-    display: flex;
-    align-items: center;
+/* Responsive: en PC los hijos en fila y centrados */
+@media (min-width: 768px) {
+  .padre {
+    flex-direction: row;
     justify-content: center;
-    min-height: 100vh;
-    background:black;
-    flex-wrap: wrap;
-}
-/*contenedor principal*/
-.card {
-    position: relative;
-    width: 350px;
-    height: 830px;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: .5s;
-    margin: 15px 20px;
-    
-   min-height: 100%;
-  background-size: 300%;
-  background-image: var(--gradient);
-  -webkit-animation: bg-animation 10s infinite;
-          animation: bg-animation 10s infinite;
+    align-items: center;
+  }
+  .hijo {
+    width: 400px;
+    height: 600px;
+    margin: 20px;
+  }
 }
 
-@-webkit-keyframes bg-animation {
-  0% {
-    background-position: left;
+
+   .hijo {
+font-family: 'Baloo 2', sans-serif;
+ /* font-family: 'Shadows Into Light';*/
+  border-radius: 10px;
+/*  border: 1px solid #FFD700; *  box-shadow: 
+    0 0 12px rgba(255, 215, 0, 0.7),
+    0 0 24px rgba(255, 215, 0, 0.5),
+    0 0 36px rgba(255, 215, 0, 0.3);*/
+  width: 90%;
+  max-width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: black;
+  background-image: url("https://i.ibb.co/q3jNqp05/IMG-20260224-WA0003.jpg");
+  background-size: 110% 100%;
+  background-position: center;
+  box-sizing: border-box;
+  opacity: 1; /* ahora siempre visible */
+  margin: 20px auto;
+  text-align: center;
+}
+
+    .mensaje-inicio h2 {
+      font-size: 30px;
+      color: #FFD700;
+     margin-bottom: 10px;
+    }
+
+    .mensaje-inicio p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: white;
+    }
+
+    /* Estilo Matrix para h2 div 1 */
+    #matrix-text {
+     /*font-size: 2mpx;*/
+     /* letter-spacing: 4px;*/
+      color: #00ff00; /* verde Matrix */
+      white-space: pre;
+    }
+
+    #matrix-text span {
+      opacity: 0;
+      transform: translateY(-400px);
+      display: inline-block;
+      animation: caer 1.5s forwards;
+    }
+
+    @keyframes caer {
+      0%   { opacity: 0; transform: translateY(-400px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    /*animacion color*/
+h2{
+  animation: animate 10s infinite linear;
+}
+
+@keyframes animate {
+  0%,100%{ color:aqua; }
+  25%{ color: deeppink; }
+  50%{ color:deepskyblue; }
+  75%{ color: white; }
+}
+
+ /*efecto olas de mar h2 div 2*/
+    #wave-text {
+   /* font-size:2em;*/
+    font-size:20px;
+ /*   font-family: 'Raleway', sans-serif;*/
+    display: inline-block;
+    color: #00ffff; /* aqua */
+    white-space: pre; /* mantiene los espacios */
   }
-  50% {
-    background-position: right;
+
+  #wave-text span {
+    display: inline-block;
+    animation: wave 2s infinite ease-in-out;
+  }
+
+  @keyframes wave {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-8px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+  }
+  /*efecto zoom p */
+   #zoom-text {
+  font-size: 1rem;
+  opacity: 0;
+  transform: scale(0);
+  animation: zoomIn 5s forwards ease-out, animate 10s infinite linear;
+}
+
+
+/* Estilo de la tabla dentro del div 2 */
+.tabla-precios {
+  background: linear-gradient(to bottom, #001f3f, #000);
+  border: 1px solid #FFD700;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  overflow-x: auto;
+
+  /* estado inicial */
+  transform: scale(0);
+  opacity: 0;
+}
+
+.tabla-precios table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-precios th, .tabla-precios td {
+  border: 1px solid #FFD700;
+  font-size: 12.5px;
+}
+
+.tabla-precios th {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #FFD700;
+  font-size: 15px;
+}
+
+.tabla-precios tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tabla-precios td {
+  vertical-align: top;
+}
+
+/* Animación zoom */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
   }
   100% {
-    background-position: left;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-
-
+/* Clase activa que dispara el zoom */
+.tabla-precios.activo {
+  animation: zoomIn 1.5s ease forwards;
 }
 
-
-
-.card:hover {
-    box-shadow: 0 5px 10px rgba(0,0,0,1);
-    transform: translateY(-20px);
+/*fuentes*
+/*
+.fuentes-demo {
+  background: linear-gradient(to bottom, #001f3f, #000);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  max-width: 600px;
+  margin: 20px auto;
 }
-/*contenedor de imágen*/
-.card .head {
-    height: 125px;
-    width: 100%;
-    position: relative;
-}
+*/
 
-.card .head .circle {
-    position: absolute;
-    width: 320px;
-    height: 300px;
-    border-radius: 50%;
-    background-image: url("https://i.ibb.co/5LKMwm8/images-2.png"); background-size: 50px;
-    bottom:0;
-   
+.fuentes-demo h2 {
+  color: #FFD700;
+/*  margin-bottom: 20px;*/
+  font-family: 'Shadows Into Light', cursive;
+  text-shadow: 0 0 10px #FFD700;
 }
 
-.card .head .img {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-
-    background-image: var(--gradiente);
+.fuentes-demo p {
+ /* margin: 8px 0;*/
+  font-size: 14px;
   
-    --gradiente: linear-gradient(to bottom,black,black
-    );
-    padding: 3px;
-    border-radius:50%;
-    bottom: -30%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.card .head .img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-Img:hover {
-    
-background-image: var(--gradiente);
-  
-    --gradiente: linear-gradient(to top,purple,white
-    );
-     box-shadow: 0 5px 10px rgba(0,0,0,1);
-    transform: translateY(-20px);
 }
 
 
+.arial { font-family: Arial, sans-serif; color: white; }
+.times { font-family: "Times New Roman", serif; color: white; }
+.courier { font-family: "Courier New", monospace; color: white; }
+.comic { font-family: "Comic Sans MS", cursive, sans-serif; color: white; }
+.georgia { font-family: Georgia, serif; color: white; }
+.impact { font-family: Impact, sans-serif; color: white; }
+.verdana { font-family: Verdana, sans-serif; color: white; }
+.trebuchet { font-family: "Trebuchet MS", sans-serif; color: white; }
+.garamond { font-family: Garamond, serif; color: white; }
+.cursive { font-family: cursive; color: white; }
 
+.roboto { font-family: 'Roboto', sans-serif; color: white; }
+.montserrat { font-family: 'Montserrat', sans-serif; color: white; }
+.lobster { font-family: 'Lobster', cursive; color: white; }
+.pacifico { font-family: 'Pacifico', cursive; color: white; }
+.shadows { font-family: 'Shadows Into Light', cursive; color: white; }
+.dancing { font-family: 'Dancing Script', cursive; color: white; }
+.raleway { font-family: 'Raleway', sans-serif; color: white; }
+.oswald { font-family: 'Oswald', sans-serif; color: white; }
+.playfair { font-family: 'Playfair Display', serif; color: white; }
+.indie { font-family: 'Indie Flower', cursive; color: white; }
 
-/*contenedor del texto*/
-.card .description {
-    height: 650px;
-    padding: 40px 20px 20px 20px;
-    border-bottom: white solid 1px ;
-    text-align: center;
+/*efecto div 3*/
+
+/* Estado inicial: bloque interno desplazado a la izquierda */
+.hijo3 .fuentes-demo {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-.card .description h2,h4,p,i,button{
-animation: animate 10s infinite linear;
+/* Clase activa que dispara el efecto */
+.hijo3.activo .fuentes-demo {
+  transform: translateX(0);
+  opacity: 1;
 }
-@keyframes animate
-{
-    0%,100%{
-        color:aqua;
-    }
-    25%{
-        color: deeppink;
-    }
-    50%{
-        color:deepskyblue;
-    }
-    75%{
-        color: white;
-    }
+/*efecto div 4*/
+/* Estado inicial: bloque interno desplazado a la derecha */
+.hijo4 .fuentes-demo {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-
-
-/*contenedor de redes sociales*/
-
-.card .contact {
-    width: 100%;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size:25px;
-    
+/* Clase activa que dispara el efecto */
+.hijo4.activo .fuentes-demo {
+  transform: translateX(0);
+  opacity: 1;
 }
 
-    
+
+/* slider div 5*/
+.slider {
 
 
-.card .contact a {
-    text-decoration: none;
-    color: #fff;
-  
-
-    padding: 5px 10px;
-    border-radius: 100%;
-    transition: .5s;  
+width: 225px;
+   height: 315px;
+/*  width: 100%;
+  max-width: 400px;*/
+  overflow: hidden;
+  border: 1px solid #FFD700;
+  box-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.7),
+    0 0 16px rgba(255, 215, 0, 0.5);
+/*  transition: transform 0.2s, color 0.3s;*/
+  border-radius: 10px;
+  margin:10px;
 }
 
-.card .contact a:hover {
-    
-background-image: var(--gradiente);
-  
-    --gradiente: linear-gradient(to top,purple,black
-    );
-     box-shadow: 0 5px 5px rgba(0,0,0,1);
-    transform: translateY(-10px);
+.slides {
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
-/*CATALOGO
+.slides img {
 
-.CATALOGO{
-  position: relative;
-  left:65px;
- display: center;
-  text-align:center;
-  color:white;
-  text-decoration:none;
-  Margin:10px;
-  width: 150px;
-  height:40px;
-  Padding:5px;
+
+width: 223px;
+    height: 315px;
+
+  flex-shrink: 0;
+}
+/*
+
+efecto girar cuando se active el hijo4 */
+.hijo4.activo .slider {
+  animation: girar 5s ease-out forwards;
+}
+
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,215,0,0.4); /* dorado suave */
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: #FFD700; /* dorado fuerte */
+  transform: scale(1.2);
+}
+
+
+.zoom {
+  display: inline-block;
+  animation: zoomPulse 2s infinite ease-in-out;
+}
+
+/* Animación pulsante */
+@keyframes zoomPulse {
+  0%   { transform: scale(1); color: #FFD700; }
+  50%  { transform: scale(1.3); color: white; }
+  100% { transform: scale(1); color: #FFD700; }
+}
+
+/*enlaces*/
+
+.hijo6 a {
+  display: inline-block;        /* necesario para transform */
+  text-decoration: none;        /* sin subrayado */
+  color: #FFD700;               /* dorado inicial */
   font-size: 20px;
-  border-radius: 20px;
-  border: 1px white solid;
-  box-shadow:0px 0px 10px 1px white;
-                  0px 0px 10px 5px white;
-  text-shadow: -2px 1px purple;
-  
-  min-height: 30px;
-  background-size: 300%;
-  background-image: var(--gradient);
-  -webkit-animation: bg-animation 20s infinite;
-          animation: bg-animation 20s infinite;
-          */
-  
-/*codigo de fondo animado*/
-  }
-  @-webkit-keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
+  font-family: 'Baloo 2', sans-serif;
+  margin: 10px;
+  padding: 10px 20px;           /* espacio interno tipo botón */
+  border: 1px solid #FFD700;    /* borde dorado */
+  border-radius: 30px;          /* forma ovalada */
+  background-color: transparent;
+  box-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.7),
+    0 0 16px rgba(255, 215, 0, 0.5);
+  cursor: pointer;
+
+  /* Animación pulsante infinita */
+  animation: zoomPulse 2s infinite ease-in-out;
+  transition: transform 0.3s, color 0.3s;
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
+.hijo6 a:hover {
+  transform: scale(1.4);        /* más grande al pasar el mouse */
+  color: white;                 /* cambia a blanco */
+  box-shadow: 
+    0 0 12px rgba(255, 215, 0, 1),
+    0 0 24px rgba(255, 215, 0, 0.7);
 }
 
-
-
-
-/*slider*/
-
-    #loader {
-       /* background-color: #ffffff;*/
-        height: 15em;
-        width: 15em;
-        position: absolute;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-        display: -ms-grid;
-        display: grid;
-        place-items: center;
-        border-radius: 5px;
-      }
-      #loader:after {
-        content: "";
-        position: absolute;
-        height: 11em;
-        width: 11em;
-        
-    /*  border: 0.9em solid red;
-        border-top-color:black;
-        border-radius: 50%;*/
-        
-        -webkit-animation: spin 1s linear infinite;
-        animation: spin 1s linear infinite;
-      }
-      @-webkit-keyframes spin {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes spin {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      
-      
-      #box {
-        position: absolute;
-        -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-        top: 68%;
-        left: 50%;
-        width: 80vw;
-        max-width: 41em;
-        min-height: 26em;
-        display: none;
-      }
-      .img-con {
-        position: absolute;
-      }
-      .img-con img {
-        height: 1px;
-        width: 1px;
-      }
-      .uno {
-        background-color: rgba(255,255, 255, .1);
-        ;
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        border-radius: 0.6em;
-        -webkit-box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-                box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-      }
-      
-       .dos {
-        background-color: rgba(255,255, 255, .1);
-        ;
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        border-radius: 0.6em;
-        -webkit-box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-                box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-      }
-      
-      
-       .wrapper{
-        background-color: rgba(255,255, 255, .1);
-        ;
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        border-radius: 0.6em;
-        -webkit-box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-                box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
-      }
-      
-      
-      
-      
-      .testimonial-container {
-        width: 85%;
-        height: 100%;
-        position: relative;
-        margin: auto;
-        padding: 1.8em 1.2em;
-      }
-      .testimonial-container p {
-        color: #8c8c90;
-        text-align: center;
-        font-size:20px;
-        line-height: 2em;
-        letter-spacing: 0.05em;
-      }
-      .testimonial-container img {
-        display: block;
-        margin: 1.8em auto 1.25em auto;
-        border-radius: 50%;
-        width:210px;
-      }
-      .testimonial-container h1 {
-        
-       
-        text-align: center;
-        animation: animate 10s infinite linear;
+/* Animación pulsante */
+@keyframes zoomPulse {
+  0%   { transform: scale(1); color: #FFD700; }
+  50%  { transform: scale(1.2); color: white; }
+  100% { transform: scale(1); color: #FFD700; }
 }
-@keyframes animate
-{
-    0%,100%{
-        color:aqua;
-    }
-    25%{
-        color: deeppink;
-    }
-    50%{
-        color:deepskyblue;
-    }
-    75%{
-        color: white;
-    }
-}
-
+  </style>
+</head>
+<body>
+  <div class="padre">
+    <div class="hijo hijo1">
+      <div class="mensaje-inicio">
+        <h2 id="matrix-text" data-text="CATALOGO  LUZNET"></h2>
         
-        
-      
-      .testimonial-container h6 {
-        color: #bcc4da;
-        font-size: 0.9em;
-        letter-spacing: 0.03em;
-        font-weight: 400;
-        text-align: center;
-      }
-      .uno button  {
-        font-size: 1.8em;
-       /* color: #0a69ed;*/
-        height: 2.2em;
-        width: 2.2em;
-        position: absolute;
-        left:0px;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(255,255, 255, .1);
-        ;
-        border: none;
-        border-radius: 50%;
-        -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
-                box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-      }
-        .dos button  {
-        font-size: 1.8em;
-       /* color: #0a69ed;*/
-        height: 2.2em;
-        width: 2.2em;
-        position: absolute;
-        right:0px;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(255,255, 255, .1);
-        ;
-        border: none;
-        border-radius: 50%;
-        -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
-                box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-      }
-      
-      /*
-      button#next {
-         top:-550px;
-        right:-10px;
-      }
-      button#prev {
-        top:-550px;
-        right:243px;
-      }*/
-      a {
-        position: relative;
-        display: block;
-     /*   background-color: #ffffff;*/
-        color: #0a69ed;
-        text-decoration: none;
-       /* font-size: 1.2em;*/
-        font-weight: 600;
-        text-align: center;
-        padding: 0.9em 0;
-        border-radius: 0.3em;
-        margin-top: 30px;
-      }
-      @media screen and (max-width: 650px) {
-        .wrapper {
-          font-size: 14px;
-        }
-      }
-
-</style>
-    </head>
-    <body>
-    <div class="card">
-        <div class="head">
-            <div class="circle"></div>
-            <div class="img">
-                <img src="https://i.ibb.co/Tr5HpnC/IMG-20220607-132154.jpg" alt="tu foto aqui">
-            </div>
-        </div>
-            
-        
-        <div class="description">
-            <h2 class="text-animation">CATALOGO V2</h2><h2>PRECIO $500</h2> 
-            <!--H4>
-                TARJETA ULTIMATE
-            </H4>
-            <H4>TU PUESTO O TU NEGOCIO</H4>
-            <p>BREVE DESCRIPCIÓN DE LO QUE HACES <br />PRECIO $500</p-->
-            
-            <div class="uno">
-            <button id="prev" onclick="prev()">&lt;</button>
-        
-        </div>
-        
-        <div class="dos">
-        
-        <button id="next" onclick="next()">&gt;</button>
-        </div>
-            
-        </div>
-        
-        <!-- inicio del slider -->
-        <div id="loader"></div>
-    <div id="box">
-      <div class="img-con">
-        <!--img src="https://i.postimg.cc/gJDkZrNn/profile-image-1.png" />
-        <img src="https://i.postimg.cc/8kZzkJ7Y/profile-image-2.png" />
-        <img src="https://i.postimg.cc/90gmLK32/profile-image-3.png" />
-        <img src="https://i.postimg.cc/6qp6Lwmz/profile-image-4.png" /-->
+        <p>Invitaciones que fusionan <br /> estética, tecnología y ceremonia,<br>
+        diseñadas para impactar y perdurar.</p>
       </div>
-      <div class="wrapper">
-        <div class="testimonial-container" id="testimonial-container">
-          <div id="testimonial1" class="active">
-            <img src="" />
-          </div>
-        </div>
+    </div>
+    <div class="hijo hijo2">
+        <h2 id="wave-text">PRECIOS</h2>
         
-      </div>
-      <!--a href="https://youtu.be/sRJXGtM72KQ" target="_blank"
-        >My Youtube Channel</a
-      >
-    </div-->
-    
-    <script>
-      window.addEventListener("load", function () {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("box").style.display = "block";
-      });
-      const testimonials = [
-        {
+  
+  <div class="tabla-precios">
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Paquete</th>
+          <th>Características</th>
+          <th>Precio</th>
           
-          image: "https://i.ibb.co/WFdxDgh/images-1.jpg",
-          testimonial:
-            "<h1>PRODUCTO 1</h1>  <br /><p>         BREVE DESCRIPCION<br /> DE TU PRODUCTO</p>",
-        },
-        {
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Básico</td>
+          <td>
+            - Título del evento<br>
+            - Fecha y hora<br>
+            - Ubicación con mapa<br>
+            - Fotos decorativas<br>
+            - Mensaje consagratorio sencillo
+          </td>
+          <td>$200 MXN</td>
+        
+        </tr>
+        <tr>
+          <td>Platino</td>
+          <td>
+            - Todo lo del Básico<br>
+            - Mensaje consagratorio personalizado<br>
+            - Música opcional<br>
+            - Contador regresivo
+          </td>
+          <td>$400 MXN</td>
           
-          image: "https://i.ibb.co/6B3mBGm/images-3.jpg",
-          testimonial:
-            " <h1>PRODUCTO 2</h1> <br /><p>           BREVE DESCRIPCION <br /> DE TU PRODUCTO</p>",
-        },
-        {
-          
-          image: "https://i.ibb.co/M86JhM5/images.png",
-          testimonial:
-            "<h1>PRODUCTO 3</h1> <br /><p>           BREVE DESCRIPCION <br /> DE TU PRODUCTO</p>",
-        },
-       
-      ];
-      let i = 0; // current slide
-      let j = testimonials.length; // total slides
-      let testimonialContainer = document.getElementById(
-        "testimonial-container"
-      );
-      function next() {
-        i = (j + i + 1) % j;
-        displayTestimonial();
-      }
-
-      function prev() {
-        i = (j + i - 1) % j;
-        displayTestimonial();
-      }
-      let displayTestimonial = () => {
-        testimonialContainer.innerHTML = `
-        <p>${testimonials[i].testimonial}</p>
-         <img src=${testimonials[i].image}></img>
+        </tr>
+        <tr>
+          <td>Premium</td>
+          <td>
+            - Todo lo del Estándar<br>
+            - Agenda de actividades<br>
+            - QR pase de entrada 50 personas<br>
+            - Confirmación vía WhatsApp
+          </td>
+          <td>$600 MXN</td>
         
-        `;
-      };
-      window.onload = displayTestimonial;
-    </script>
+        </tr>
+        <tr>
+          <td>Exclusive</td>
+          <td>
+            - Todo lo del Premium<br>
+            - QR pase de entrada <br /> + de 50
+            personas
+          </td>
+          <td>$800</td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    </div>
+    
+    <div class="hijo hijo3">
     
     
+  
+<div class="fuentes-demo">
+  <h2>Fuentes <br /> Grupo 1</h2>
+  <p class="arial">Arial – limpia y moderna</p>
+  <p class="times">Times New Roman – clásica y elegante</p>
+  <p class="courier">Courier New – monoespaciada técnica</p>
+  <p class="comic">Comic Sans – divertida e informal</p>
+  <p class="georgia">Georgia – serif elegante</p>
+  <p class="impact">Impact – fuerte y llamativa</p>
+  <p class="verdana">Verdana – legible en pantalla</p>
+  <p class="trebuchet">Trebuchet MS – moderna</p>
+  <p class="garamond">Garamond – tradicional y refinada</p>
+  <p class="roboto">Roboto – moderna (Google)</p>
+</div>
+
+</div>
+        
+        
     
-        
-        
-        <div class="contact"
-        >
-        <a href="tel: 3312381872"><i class="fa fa-phone"></i></a>
-
-        <a href="https://wa.me/qr/K3HPFDZLSFINP1
-        "><i class="fa fa-whatsapp"></i></a>
-        
-        <a href="https://www.facebook.com/Digital-World-100310082725612/
-        "><i class="fa fa-facebook"></i></a>
-      <a href="https://www.instagram.com/invites/contact/?i=1qfx13l6t6gy5&utm_content=g1iuoqt
-        "><i class="fa fa-instagram" aria-hidden="true"></i>
-            
-        </a>  
-        
-        <a href="http://tiktok.com/@felipemartinez5483
-        "><i class="fa fa-tiktok"></i></a>
-        
-        <a href="https://youtube.com/c/FELIPEMARTINEZCOMPOSITOR
-        "><i class="fa fa-youtube"></i></a>
-        
-        
-        <a href="mailto:felipemartinez84@live.com.mx?Subject=bienvenido
-        "><i class="fa fa-envelope-open
-        "></i></a>
-        
-<a href="https://maps.app.goo.gl/4um9YVqEmjJ7LZX8A
-"><i class="fa fa-street-view
-"></i></a>
+    
+    <div class="hijo hijo4">
+    
+    
+  
+<div class="fuentes-demo">
+  <h2>Fuentes <br> Grupo 2</h2>
+  <p class="montserrat">Montserrat – geométrica y limpia</p>
+  <p class="lobster">Lobster – display llamativa</p>
+  <p class="pacifico">Pacifico – manuscrita relajada</p>
+  <p class="shadows">Shadows Into Light – manuscrita ceremonial</p>
+  <p class="dancing">Dancing Script – cursiva manuscrita</p>
+  <p class="raleway">Raleway – elegante sans serif</p>
+  <p class="oswald">Oswald – compacta y fuerte</p>
+  <p class="playfair">Playfair Display – serif sofisticada</p>
+  <p class="indie">Indie Flower – manuscrita divertida</p>
+  <p class="cursive">Cursive genérica – estilo manuscrito</p>
+</div>
 
 
-
-        
         
         
     </div>
     
-    <!--audio controls>
-    <source src="
-    https://www.dropbox.com/s/8f38jxyjktta8jm/Ece%20Mumay%20-%20Yan%C4%B1ma%20Yan%C4%B1ma%20%28Extended%20Version%29%28MP3_320K%29.mp3?dl=0
+    <div class="hijo hijo5">
+  <h2 class="zoom">FONDOS</h2>
+    <div class="slider">
     
-    " type="audio/mpeg">
-    <source src="
-    https://dl.dropbox.com/s/8f38jxyjktta8jm/Ece%20Mumay%20-%20Yan%C4%B1ma%20Yan%C4%B1ma%20%28Extended%20Version%29%28MP3_320K%29.mp3?dl=0
     
-    " type="audio/ogg">
-
-</audio-->
-
-<!--div class="CATALOGO">
-
-
-
-
- <a 
-      href="https://felipe021284.github.io/CATALOGO-V1/
-      ">
-          
-      <i class="fa fa-hand-o-right
-      " aria-hidden="true"> CATALOGO</i>
-</a>
-
-</div-->
-        
-        
-    
+  <div class="slides">
   
-    </body>
+   
+    <img src="https://i.ibb.co/q3jNqp05/IMG-20260224-WA0003.jpg
+    " alt="Foto 1">
+    <img src="https://i.ibb.co/Kcf7vx1p/image-1770932827305.jpg
+    " alt="Foto 2">
+    <img src="https://i.ibb.co/84QFW5M2/xv-a-os.jpg
+    " alt="Foto 3">
+    <img src="https://i.ibb.co/PZD16Wqt/images-1.jpg
+    " alt="Foto 4">
+  </div>
+</div>
+
+<!-- Barra indicadora (fuera del slider) -->
+<div class="indicator">
+  <span class="dot active"></span>
+  <span class="dot active"></span>
+    <span class="dot active"></span>
+  <span class="dot"></span>
+  <!--span class="dot"></span-->
+</div>
+
+ </div>
+ 
+ <div class="hijo hijo6">
+    <h2 class="zoom">TIPOS DE INVITACIONES</h2>
+    
+    <a id="link1" href="https://luznet-digitalsolutions.github.io/LISTA-GENERICA/
+    ">GENERICA</a>
+    
+    <a id="link1" href="./TIPOS-DE-INVITACION-XV/">TEMATICA XV AÑOS</a>
+    
+    <a id="link1" href="./TIPOS-DE-INVITACION-BODA/">TEMATICA BODA</a>
+    
+    <a id="link1" href="./TIPOS-DE-INVITACION-BAUTIZO/">TEMATICA BAUTIZO</a>
+</div>
+   
+  </div>
+
+  <script>
+  
+  //efecto div 1
+    function prepararMatrixTexto() {
+      const p = document.getElementById('matrix-text');
+      if (!p) return;
+
+      const texto = p.getAttribute('data-text');
+      p.textContent = ''; // limpiar contenido
+
+      // Crear spans para cada letra con retraso aleatorio
+      for (let i = 0; i < texto.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = texto[i];
+        const delay = (Math.random() * 1.5).toFixed(2); // retraso aleatorio
+        span.style.animationDelay = `${delay}s`;
+        p.appendChild(span);
+      }
+    }
+
+    // Observer para activar el efecto cada vez que el div1 entra en pantalla
+    document.addEventListener("DOMContentLoaded", () => {
+      const targetDiv = document.querySelector(".hijo1");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            prepararMatrixTexto();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(targetDiv);
+    });
+    
+    
+    
+  //efecto olas de mar div 2
+  function prepararWaveTexto() {
+    const p = document.getElementById('wave-text');
+    if (!p) return;
+
+    const texto = p.textContent;
+    p.textContent = ''; // limpiar contenido
+
+    // Crear spans para cada letra (incluyendo espacios)
+    for (let i = 0; i < texto.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = texto[i] === " " ? "\u00A0" : texto[i]; // espacio visible
+      span.style.animationDelay = `${i * 0.2}s`; // efecto de ola progresivo
+      p.appendChild(span);
+    }
+  }
+
+  prepararWaveTexto();
+  
+  
+  
+  // Observer para activar el efecto cada vez que el div2 entra en pantalla
+document.addEventListener("DOMContentLoaded", () => {
+  const targetDiv = document.querySelector(".hijo2 .tabla-precios");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("activo");
+      } else {
+        // opcional: reinicia el efecto al salir
+        entry.target.classList.remove("activo");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(targetDiv);
+});
+
+
+//efecto div 3
+document.addEventListener("DOMContentLoaded", () => {
+  const targetDiv = document.querySelector(".hijo3");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("activo");
+      } else {
+        // opcional: reinicia el efecto al salir
+        entry.target.classList.remove("activo");
+      }
+    });
+  }, { threshold: 0.3 }); // se activa cuando ~30% del div entra en pantalla
+
+  observer.observe(targetDiv);
+});
+
+
+//efecto div 3
+document.addEventListener("DOMContentLoaded", () => {
+  const targetDiv = document.querySelector(".hijo4");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("activo");
+      } else {
+        // opcional: reinicia el efecto al salir
+        entry.target.classList.remove("activo");
+      }
+    });
+  }, { threshold: 0.3 }); // se activa cuando ~30% del div entra en pantalla
+
+  observer.observe(targetDiv);
+});
+
+
+function iniciarSliderDiv5() {
+  const hijo5 = document.querySelector(".hijo5");
+  const slides = hijo5.querySelector(".slides");
+  const dots = hijo5.querySelectorAll(".dot");
+  const slider = hijo5.querySelector(".slider");
+  
+
+  let index = 0;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  const total = dots.length;
+
+  function updateIndicator() {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  slides.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slides.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (diff < -50 && index < total - 1) index++;
+    if (diff > 50 && index > 0) index--;
+
+    currentTranslate = -index * slider.clientWidth;
+    slides.style.transform = `translateX(${currentTranslate}px)`;
+    prevTranslate = currentTranslate;
+
+    updateIndicator();
+  });
+
+  // Inicializar
+  updateIndicator();
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", iniciarSliderDiv5);
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const target = document.querySelector(".hijo5 .zoom");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(target);
+});
+
+
+
+
+
+          
+  </script>
+</body>
 </html>
